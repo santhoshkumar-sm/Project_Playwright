@@ -10,11 +10,12 @@ test.describe('Tests for Blog', () => {
         await page.waitForSelector("//*[@id='recent-posts-3']");
         const blogList = page.locator("//*[@id='recent-posts-3']/ul/li");
         console.log("Total blogs => "+await blogList.count());
+        expect(await blogList.count()).toEqual(5);
         var blogText;
         for(const blog of await blogList.elementHandles()){
-             blogText = await blog.textContent();
-            console.log(await blogText.length);
-            expect(blogText.length).toBeGreaterThan(5);
+             blogText = (await blog.textContent())?.trim();
+            console.log("Blog length: " +await blogText.length +" Blog name: "+ blogText);
+            expect(blogText.length).toBeGreaterThan(10);
         }
     })
 })
