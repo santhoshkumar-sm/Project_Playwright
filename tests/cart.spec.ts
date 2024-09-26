@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../pages/home.page";
 import CartPage from "../pages/cart.page";
-const path = require('path');
+import path from 'path';
 
 test.describe('Tests for validating cart and upload functionality', () => {
     let homePage: HomePage;
