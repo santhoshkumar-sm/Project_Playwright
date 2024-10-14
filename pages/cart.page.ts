@@ -14,6 +14,9 @@ class CartPage {
     this.uploadBTN = page.locator("//*[@id='upload_1']");
     this.successMessage = page.locator("//label[contains(text(),'uploaded successfully')]");
   }
+  async navigateToCartPage() {
+    await this.page.goto("/cart");
+  }
 }
 
 export default CartPage;

@@ -11,6 +11,10 @@ class BlogPage {
     this.blogs = page.locator("//*[@id='recent-posts-3']");
     this.blogList = page.locator("//*[@id='recent-posts-3']/ul/li");
   }
+
+  async navigateToBlogPage() {
+    await this.page.goto("/blog");
+  }
 }
 
 export default BlogPage;
